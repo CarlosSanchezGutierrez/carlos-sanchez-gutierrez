@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0D1D4B"/><stop offset="1" stop-color="#08122F"/></linearGradient></defs>
+  <rect width="1200" height="430" fill="url(#g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M0 350H1200M0 370H1200" opacity=".4"/>
+    <path d="M105 322h260v-88H105zM132 234v-73h60v73m20 0v-111h80v111m-50-111v-34h20v34M150 263h34v59m35-59h34v59m37-59h34v59"/>
+    <path d="M790 322h280V178H790zM820 178v-47h70v47m20 0V96h95v82m-51-82V57h18v39m-137 72h34v31m33-31h34v31m34-31h34v31m34-31h34v31m-203 32h34v31m33-31h34v31m34-31h34v31m34-31h34v31"/>
+    <path d="M403 275c82-112 290-112 381 0" stroke-dasharray="6 10"/>
+    <circle cx="600" cy="229" r="6" fill="#FFFFFF"/>
+  </g>
+  <g fill="#FFFFFF" font-family="Lato,Arial,sans-serif">
+    <text x="105" y="398" font-size="19" font-weight="700" letter-spacing="3">TAMPICO</text>
+    <text x="790" y="398" font-size="19" font-weight="700" letter-spacing="3">MONTERREY</text>
+    <text x="538" y="202" font-size="13" letter-spacing="2">A NEW CHAPTER</text>
+  </g>
+</svg>

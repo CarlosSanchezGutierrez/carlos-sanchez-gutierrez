@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0D1D4B"/><stop offset="1" stop-color="#08122F"/></linearGradient></defs>
+  <rect width="1200" height="460" fill="url(#g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2">
+    <rect x="90" y="120" width="220" height="220"/><rect x="490" y="120" width="220" height="220"/><rect x="890" y="120" width="220" height="220"/>
+    <path d="M310 230h180m220 0h180" stroke-dasharray="7 9"/>
+    <path d="M140 180h120m-120 35h120m-120 35h86m-86 35h108"/>
+    <path d="M540 180h120m-120 35h120m-120 35h86m-86 35h108"/>
+    <path d="M930 275l42-43 37 21 63-71m-142 106h142"/>
+    <path d="M470 222l20 8-20 8m400-16 20 8-20 8"/>
+  </g>
+  <g fill="#FFFFFF" font-family="Lato,Arial,sans-serif">
+    <text x="90" y="380" font-size="17" font-weight="700" letter-spacing="2">SOURCE SYSTEMS</text>
+    <text x="490" y="380" font-size="17" font-weight="700" letter-spacing="2">DATA PLATFORM</text>
+    <text x="890" y="380" font-size="17" font-weight="700" letter-spacing="2">ANALYTICS</text>
+    <text x="90" y="409" font-size="13" letter-spacing="1">ILLUSTRATIVE, NON-CLIENT-SPECIFIC MAP</text>
+  </g>
+</svg>

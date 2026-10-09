@@ -2,31 +2,49 @@
   const year = document.getElementById("current-year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  const countdown = document.querySelector("[data-graduation]");
-  if (!countdown) return;
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
 
-  const deadline = new Date(countdown.dataset.graduation).getTime();
-  const fields = {
-    days: countdown.querySelector('[data-count="days"]'),
-    hours: countdown.querySelector('[data-count="hours"]'),
-    minutes: countdown.querySelector('[data-count="minutes"]'),
-    seconds: countdown.querySelector('[data-count="seconds"]')
+  const closeNav = () => {
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    nav.classList.remove("is-open");
   };
 
-  const update = () => {
-    const remaining = Math.max(0, deadline - Date.now());
-    const totalSeconds = Math.floor(remaining / 1000);
-    const values = {
-      days: Math.floor(totalSeconds / 86400),
-      hours: Math.floor((totalSeconds % 86400) / 3600),
-      minutes: Math.floor((totalSeconds % 3600) / 60),
-      seconds: totalSeconds % 60
-    };
-    Object.entries(values).forEach(([key, value]) => {
-      if (fields[key]) fields[key].textContent = String(value).padStart(2, "0");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      nav.classList.toggle("is-open", open);
     });
-  };
 
-  update();
-  window.setInterval(update, 1000);
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeNav();
+    });
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 701px)").matches) closeNav();
+    });
+  }
+
+  const revealItems = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -24px 0px" });
+
+    revealItems.forEach((item, index) => {
+      item.style.transitionDelay = String(Math.min(index % 4, 3) * 70) + "ms";
+      observer.observe(item);
+    });
+  } else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
 })();
